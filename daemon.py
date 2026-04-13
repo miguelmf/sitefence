@@ -13,15 +13,19 @@ def run():
     if pid > 0:
         click.echo("SiteFence started in run().")
         sys.exit(0)
-
     while True:
         rules = load_config()
-
+        urls_to_block = []
+        urls_to_unblock = []
         for rule in rules:
             if should_block(rule):
-                block(rule.urls)
+                urls_to_block.extend(rule.urls)
             else:
-                unblock(rule.urls)
+                urls_to_unblock.extend(rule.urls)
+        if urls_to_block:
+            block(urls_to_block)
+        if urls_to_unblock:
+            unblock(urls_to_unblock)
 
         time.sleep(300)
 
