@@ -1,0 +1,10 @@
+[Unit]
+Description=SiteFence - block distracting websites on a schedule
+
+[Service]
+ExecStart=/usr/bin/python /path/to/sitefence.py start
+Restart=on-failure
+User=root
+
+[Install]
+WantedBy=multi-user.target

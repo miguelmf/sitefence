@@ -2,16 +2,10 @@ import time
 from datetime import datetime
 from config import SiteRule, load_config
 from blocker import block, unblock
-import os, sys
-import click
 
 def run():
     """Runs the SiteFence daemon."""
 
-    pid = os.fork()
-    if pid > 0:
-        click.echo("SiteFence started in run().")
-        sys.exit(0)
     while True:
         rules = load_config()
         urls_to_block = []

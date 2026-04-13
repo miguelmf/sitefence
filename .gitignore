@@ -3,3 +3,4 @@ __pycache__/
 *.pyo
 .env
 sites.json
+sitefence.service
