@@ -1,6 +1,6 @@
 def block(urls: list[str]):
     """Blocks a list of urls."""
-    
+
     hosts_path = "/etc/hosts"
 
     with open(hosts_path, "r") as f:

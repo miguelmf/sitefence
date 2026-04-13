@@ -1,9 +1,6 @@
 import json
 from pathlib import Path
 from dataclasses import dataclass
-import os
-import signal
-
 
 @dataclass
 class SiteRule:
@@ -33,7 +30,6 @@ def load_config() -> list[SiteRule]:
     path_to_config = find_config()
     with open(path_to_config) as f:
         config = json.load(f)
-        # print(config)
 
     rules = []
     for site in config["sites"]:
@@ -45,10 +41,7 @@ def load_config() -> list[SiteRule]:
             comment = site["comment"]
         )
         rules.append(rule)
-        print("rule: ", rule)
 
-    # print("...")
-    # print(rules)
     return rules
 
 

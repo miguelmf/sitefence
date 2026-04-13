@@ -40,10 +40,9 @@ The daemon reads the sites.json file and checks if the current time is within th
 - You have have to restart the WebBrowser to re-enable the blocked sites? It seems like this is necessary on some browsers but not others, according to my tests.
 - This only blocks on the local machine. You can still skip this by picking up your smartphone. I recommend buying a dumbphone.
 - Just one schedule-rule per day. I need to add support for multiple rules per day (soon-tm).
-- Due to browser cache issues, the hosts file may not be properly followed.
+- Due to browser cache issues, the hosts file may not be properly followed for a minute or so. If you use firejail, it seems like you need to restart the browser.
 
 ## TODO
 
 - Add support for multiple rules per day.
 - Switch to systemd service.
-- Kill browser when the hosts file is updated.

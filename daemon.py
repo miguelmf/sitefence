@@ -2,7 +2,6 @@ import time
 from datetime import datetime
 from config import SiteRule, load_config
 from blocker import block, unblock
-from pathlib import Path
 import os, sys
 import click
 
@@ -37,19 +36,10 @@ def should_block(rule: SiteRule) -> bool:
 
     if current_day in rule.days:
         if current_time >= rule.start and current_time <= rule.end:
-            # print("----1")
-            # print(f"Blocking {rule.urls} on {current_day} at {current_time}.")
-            # print("----1")
             return True
         else:
-            # print("----2")
-            # print(f"Not blocking {rule.urls} on {current_day} at {current_time}.")
-            # print("----2")
             return False
     else:
-        # print("----3")
-        # print(f"Not blocking {rule.urls} on {current_day} at {current_time}.")
-        # print("----3")
         return False
 
 
