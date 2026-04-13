@@ -1,0 +1,37 @@
+{
+  "sites": [
+    {
+      "urls": ["reddit.com", "www.reddit.com", "old.reddit.com"],
+      "time": {
+        "days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ],
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "comment": "You waste so much time on reddit. Fuck reddit. Do something useful."
+    },
+    {
+      "urls": ["twitter.com", "www.twitter.com", "x.com", "www.x.com"],
+      "time": {
+        "days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday",
+          "sunday"
+        ],
+        "start": "00:00",
+        "end": "23:59"
+      },
+      "comment": "lol. No comment needed. This is here just for testing purposes as I never, ever, absolutely never, use twitter."
+    }
+  ]
+}
