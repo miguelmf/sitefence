@@ -3,11 +3,15 @@ from pathlib import Path
 from dataclasses import dataclass
 
 @dataclass
-class SiteRule:
-    urls: list[str]
+class Schedule:
     days: list[str]
     start: str
     end: str
+
+@dataclass
+class SiteRule:
+    urls: list[str]
+    schedules: list[Schedule]
     comment: str
 
 
@@ -33,11 +37,18 @@ def load_config() -> list[SiteRule]:
 
     rules = []
     for site in config["sites"]:
+        schedules = []
+        for schedule in site["schedules"]:
+            s = Schedule(
+                days = schedule["days"],
+                start = schedule["start"],
+                end = schedule["end"]
+            )
+            schedules.append(s)
+
         rule = SiteRule(
             urls = site["urls"],
-            days = site["time"]["days"],
-            start = site["time"]["start"],
-            end = site["time"]["end"],
+            schedules = schedules,
             comment = site["comment"]
         )
         rules.append(rule)

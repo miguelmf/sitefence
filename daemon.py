@@ -24,16 +24,11 @@ def run():
 
 def should_block(rule: SiteRule) -> bool:
     """Checks if a rule should be blocked."""
-
     current_day = datetime.now().strftime("%A").lower()
     current_time = datetime.now().strftime("%H:%M")
-
-    if current_day in rule.days:
-        if current_time >= rule.start and current_time <= rule.end:
-            return True
-        else:
-            return False
-    else:
-        return False
-
+    for schedule in rule.schedules:
+        if current_day in schedule.days:
+            if current_time >= schedule.start and current_time <= schedule.end:
+                return True
+    return False
 

@@ -55,6 +55,6 @@ The daemon reads the sites.json file and checks if the current time is within th
 - Just one schedule-rule per day. I need to add support for multiple rules per day (soon-tm).
 - Due to browser cache issues, the hosts file may not be properly followed for a minute or so. If you use firejail, it seems like you need to restart the browser.
 
-## TODO
+## To Do
 
-- Add support for multiple rules per day.
+- Consider cron jobs instead of systemd service.
